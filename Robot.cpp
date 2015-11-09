@@ -9,8 +9,10 @@
 #include <iostream>
 using namespace std;
 
+map<string, EtatRobot *> _mapEtats;
+
 void Robot::saisir(){
-	this->etat = new EtatRobotFiger();
-	cout << "robot" << endl;
-	this->etat->saisir();
+	//this->etat = new EtatRobotFiger();
+	//cout << "robot" << endl;
+	//this->etat->saisir();
 }

@@ -1,9 +1,13 @@
 #include "Robot.h"
-#include "EtatRobotFiger.h"
+#include "EtatRobot.h"
+
+#include <iostream>
+
+using namespace std;
 
 int main(){
-	EtatRobot etat;
-	Robot * rob = new Robot(etat);
-	rob->saisir();
+	cout << EtatRobot::getInstance() << endl;
+	//Robot * rob = new Robot(etat);
+	//rob->saisir();
 	return 0;
 }

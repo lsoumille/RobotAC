@@ -1,9 +1,52 @@
 #include "EtatRobot.h"
 #include <iostream>
+#include "EtatRobotFiger.h"
 
-using namespace std;
+map<string, EtatRobot *> EtatRobot::_mapEtats;
+EtatRobot * EtatRobot::_instance;
 
-EtatRobot EtatRobot::saisir(){
-	cout << "etat robot" << endl;
-	return *this;
+EtatRobot * EtatRobot::getInstance(){
+	if(! _instance)
+		_instance = new EtatRobot("EtatRobot");
+	return _instance;
+}
+
+EtatRobot * EtatRobot::saisir(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::avancer(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::tourner(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::poser(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::peser(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::rencontrerObstacle(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::arreter(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::repartir(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::evaluerObstacle(){
+	throw UnavailableFunction();
+}
+
+EtatRobot * EtatRobot::afficher(){
+	throw UnavailableFunction();
 }

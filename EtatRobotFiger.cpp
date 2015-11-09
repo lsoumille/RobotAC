@@ -3,7 +3,14 @@
 
 using namespace std;
 
-EtatRobot EtatRobotFiger::saisir(){
-	cout << "salut" << endl;
-	return *this;
+EtatRobotFiger * EtatRobotFiger::_instance;
+
+EtatRobotFiger * EtatRobotFiger::getInstance(){
+	if(! _instance)
+		_instance = new EtatRobotFiger("EtatRobot");
+	return _instance;
+}
+
+EtatRobot * EtatRobotFiger::saisir(){
+	return this;
 }

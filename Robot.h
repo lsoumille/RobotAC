@@ -12,6 +12,7 @@ date : Nov 2015
 class Robot{
 private:
 	EtatRobot * etat;
+	
 public:
 	Robot(EtatRobot et):etat(&et){};
 	void saisir();
