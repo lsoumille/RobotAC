@@ -5,13 +5,13 @@
 */
 
 #include "Robot.h"
-#include "EtatRobotFiger.h"
 #include <iostream>
+
 using namespace std;
 
-map<string, EtatRobot *> _mapEtats;
 
-void Robot::saisir(){
+
+void Robot::saisir(Objet O){
 	//this->etat = new EtatRobotFiger();
 	//cout << "robot" << endl;
 	//this->etat->saisir();

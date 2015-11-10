@@ -8,14 +8,28 @@ date : Nov 2015
 #define _ROBOT_H_
 
 #include "EtatRobot.h"
+#include "Objet.h"
+#include "Plot.h"
 
 class Robot{
+
 private:
-	EtatRobot * etat;
+	EtatRobot * _etat;
+	Objet * _objetTenu;
 	
 public:
-	Robot(EtatRobot et):etat(&et){};
-	void saisir();
+	Robot(EtatRobot et):_etat(&et){};
+
+	void saisir(Objet O);
+	void avancer(int x, int y);
+	void tourner(string direction);
+	void poser();
+	int peser();
+	void rencontrerPlot(Plot p);
+	int evaluerPlot();
+	void figer();
+	void repartir();
+	void afficher();
 };
 
 #endif

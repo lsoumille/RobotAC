@@ -27,6 +27,10 @@ protected:
 public:
 	static EtatRobot * getInstance();
 
+	static map<string,EtatRobot *> getMap() {
+		return _mapEtats;
+	}
+
 	virtual EtatRobot * saisir();
 	virtual EtatRobot * avancer();
 	virtual EtatRobot * tourner();

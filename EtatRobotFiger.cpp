@@ -7,7 +7,7 @@ EtatRobotFiger * EtatRobotFiger::_instance;
 
 EtatRobotFiger * EtatRobotFiger::getInstance(){
 	if(! _instance)
-		_instance = new EtatRobotFiger("EtatRobot");
+		_instance = new EtatRobotFiger("EtatRobotFiger");
 	return _instance;
 }
 
