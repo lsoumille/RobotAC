@@ -12,5 +12,5 @@ EtatRobotFiger * EtatRobotFiger::getInstance(){
 }
 
 EtatRobot * EtatRobotFiger::saisir(){
-	return this;
+	//return this;
 }

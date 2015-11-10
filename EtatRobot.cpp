@@ -11,6 +11,10 @@ EtatRobot * EtatRobot::getInstance(){
 	return _instance;
 }
 
+void initialiserEtats(){
+	cout << "salut";
+}
+
 EtatRobot * EtatRobot::saisir(){
 	throw UnavailableFunction();
 }

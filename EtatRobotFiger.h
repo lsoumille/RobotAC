@@ -23,6 +23,8 @@ protected:
 public:
 	static EtatRobotFiger * getInstance();
 	EtatRobot * saisir();
+
+	void initialiserEtats();
 };
 
 #endif

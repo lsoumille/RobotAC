@@ -10,15 +10,20 @@ date : Nov 2015
 #include "EtatRobot.h"
 #include "Objet.h"
 #include "Plot.h"
+#include "Position.h"
 
 class Robot{
 
 private:
+	Position  _position;
+	string _direction;
+	Objet _objetSaisi;
+	Plot _plot;
 	EtatRobot * _etat;
-	Objet * _objetTenu;
+	EtatRobot * _etatPrec;
 	
 public:
-	Robot(EtatRobot et):_etat(&et){};
+	Robot();
 
 	void saisir(Objet O);
 	void avancer(int x, int y);

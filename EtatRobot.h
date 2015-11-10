@@ -27,9 +27,12 @@ protected:
 public:
 	static EtatRobot * getInstance();
 
+	//pour le test
 	static map<string,EtatRobot *> getMap() {
 		return _mapEtats;
 	}
+
+	void initialiserEtats();
 
 	virtual EtatRobot * saisir();
 	virtual EtatRobot * avancer();
