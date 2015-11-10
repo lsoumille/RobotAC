@@ -10,8 +10,17 @@ date : Nov 2015
 #include "EtatRobot.h"
 
 class EtatRobotEnRoute : public EtatRobot{
+
 private:
+	static EtatRobotEnRoute * _instance;
+
+protected:
+	EtatRobotEnRoute();
+
 public:
+	static EtatRobotEnRoute * getInstance();
+
+	EtatRobot * figer();
 };
 
 #endif

@@ -20,7 +20,6 @@ private:
 	Objet _objetSaisi;
 	Plot _plot;
 	EtatRobot * _etat;
-	EtatRobot * _etatPrec;
 	
 public:
 	Robot();

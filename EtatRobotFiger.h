@@ -15,16 +15,18 @@ using namespace std;
 class EtatRobotFiger : public EtatRobot{
 
 private:
+	//stocker précedent
 	static EtatRobotFiger * _instance;
+	static EtatRobot * _etatRobotPrecedent;
 
 protected:
-	EtatRobotFiger(string name): EtatRobot(name){};
+	EtatRobotFiger();
 
 public:
 	static EtatRobotFiger * getInstance();
-	EtatRobot * saisir();
+	static void setEtatRobotPrecedent(EtatRobot *);
+	static EtatRobot * getEtatRobotPrecedent();
 
-	void initialiserEtats();
 };
 
 #endif

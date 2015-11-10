@@ -1,16 +1,26 @@
+/*
+  Implementation des méthodes de EtatRobotFiger.h
+  auteurs : Molinengo/Soumille
+  date : Nov 2015
+*/
+
 #include "EtatRobotFiger.h"
-#include <iostream>
 
-using namespace std;
+EtatRobotFiger * EtatRobotFiger::_instance = new EtatRobotFiger();
+EtatRobot * EtatRobotFiger::_etatRobotPrecedent;
 
-EtatRobotFiger * EtatRobotFiger::_instance;
+EtatRobotFiger::EtatRobotFiger(){
+
+}
 
 EtatRobotFiger * EtatRobotFiger::getInstance(){
-	if(! _instance)
-		_instance = new EtatRobotFiger("EtatRobotFiger");
 	return _instance;
 }
 
-EtatRobot * EtatRobotFiger::saisir(){
-	//return this;
+void EtatRobotFiger::setEtatRobotPrecedent(EtatRobot * ep){
+	_etatRobotPrecedent = ep;
+}
+
+EtatRobot * EtatRobotFiger::getEtatRobotPrecedent(){
+	return _etatRobotPrecedent;
 }

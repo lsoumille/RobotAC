@@ -16,33 +16,25 @@ using namespace std;
 class EtatRobot{
 
 private:
-	static map<string, EtatRobot *> _mapEtats;
 	static EtatRobot * _instance;
+	static EtatRobot * _etatRobotInitial;
 
 protected:
-	EtatRobot(string name){
-		EtatRobot::_mapEtats[name] = this;
-	}
+	EtatRobot();
 
 public:
 	static EtatRobot * getInstance();
-
-	//pour le test
-	static map<string,EtatRobot *> getMap() {
-		return _mapEtats;
-	}
-
-	void initialiserEtats();
+	static EtatRobot * getEtatInitial();
 
 	virtual EtatRobot * saisir();
 	virtual EtatRobot * avancer();
 	virtual EtatRobot * tourner();
 	virtual EtatRobot * poser();
 	virtual EtatRobot * peser();
-	virtual EtatRobot * rencontrerObstacle();
-	virtual EtatRobot * arreter();
+	virtual EtatRobot * rencontrerPlot();
+	virtual EtatRobot * figer();
 	virtual EtatRobot * repartir();
-	virtual EtatRobot * evaluerObstacle();
+	virtual EtatRobot * evaluerPlot();
 	virtual EtatRobot * afficher();
 
 	//exceptions
