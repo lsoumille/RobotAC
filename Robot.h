@@ -24,10 +24,12 @@ private:
 	Objet _objetSaisi;
 	Plot _plot;
 	EtatRobot * _etat;
+	string _ordre;
 	
 public:
 	Robot();
 
+	//fonctions
 	void saisir(Objet O);
 	void avancer(int x, int y);
 	void tourner(string direction);
@@ -38,6 +40,14 @@ public:
 	void figer();
 	void repartir();
 	void notifier();
+
+	//getters
+	Position getPosition();
+	string getDirection();
+	Objet getObjet();
+	Plot getPlot();
+	EtatRobot * getEtat();
+	string getOrdre();
 };
 
 #endif

@@ -5,12 +5,9 @@
 */
 
 #include "EtatRobotAVide.h"
+#include "EtatRobotAVideFacePlot.h"
 
-EtatRobotAVide * EtatRobotAVide::_instance =  new EtatRobotAVide();
-
-EtatRobotAVide::EtatRobotAVide(){
-
-}
+EtatRobotAVide * EtatRobotAVide::_instance =  new EtatRobotAVide("EtatAVide");
 
 EtatRobotAVide * EtatRobotAVide::getInstance(){
 	return _instance;

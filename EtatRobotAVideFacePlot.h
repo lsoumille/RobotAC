@@ -17,7 +17,7 @@ private:
 	static EtatRobotAVideFacePlot * _instance;
 
 protected:
-	EtatRobotAVideFacePlot();
+	EtatRobotAVideFacePlot(string name): EtatRobotEnRoute(name){};
 
 public:
 	static EtatRobotAVideFacePlot * getInstance();

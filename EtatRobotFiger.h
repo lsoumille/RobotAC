@@ -20,7 +20,7 @@ private:
 	static EtatRobot * _etatRobotPrecedent;
 
 protected:
-	EtatRobotFiger();
+	EtatRobotFiger(string name):EtatRobot(name){};
 
 public:
 	static EtatRobotFiger * getInstance();

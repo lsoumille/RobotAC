@@ -5,13 +5,10 @@
 */
 
 #include "EtatRobotChargeFacePlot.h"
+#include "EtatRobotEnCharge.h"
+#include "EtatRobotAVideFacePlot.h"
 
-
-EtatRobotChargeFacePlot * EtatRobotChargeFacePlot::_instance = new EtatRobotChargeFacePlot();
-
-EtatRobotChargeFacePlot::EtatRobotChargeFacePlot(){
-
-}
+EtatRobotChargeFacePlot * EtatRobotChargeFacePlot::_instance = new EtatRobotChargeFacePlot("EtatEnChargeFacePlot");
 
 EtatRobotChargeFacePlot * EtatRobotChargeFacePlot::getInstance(){
 	return _instance;

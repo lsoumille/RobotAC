@@ -6,12 +6,8 @@
 
 #include "EtatRobotFiger.h"
 
-EtatRobotFiger * EtatRobotFiger::_instance = new EtatRobotFiger();
+EtatRobotFiger * EtatRobotFiger::_instance = new EtatRobotFiger("EtatFiger");
 EtatRobot * EtatRobotFiger::_etatRobotPrecedent;
-
-EtatRobotFiger::EtatRobotFiger(){
-
-}
 
 EtatRobotFiger * EtatRobotFiger::getInstance(){
 	return _instance;

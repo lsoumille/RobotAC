@@ -7,15 +7,14 @@
 #include "EtatRobot.h"
 #include <iostream>
 #include "EtatRobotFiger.h"
+#include "EtatRobotAVide.h"
 
-EtatRobot * EtatRobot::_instance =  new EtatRobot();
+EtatRobot * EtatRobot::_instance =  new EtatRobot("EtatRobot");
 EtatRobot * EtatRobot::_etatRobotInitial;  
-
-EtatRobot::EtatRobot(){
-}
 
 EtatRobot * EtatRobot::getEtatInitial(){
 	_etatRobotInitial = EtatRobotFiger::getInstance();
+	_etatRobotInitial = EtatRobotAVide::getInstance();
 	return _etatRobotInitial;
 }
 
@@ -61,4 +60,8 @@ EtatRobot * EtatRobot::evaluerPlot(){
 
 EtatRobot * EtatRobot::afficher(){
 	throw UnavailableFunction();
+}
+
+string EtatRobot::getName(){
+	return _name;
 }

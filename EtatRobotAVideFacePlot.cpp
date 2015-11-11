@@ -5,20 +5,18 @@
 */
 
 #include "EtatRobotAVideFacePlot.h"
+#include "EtatRobotChargeFacePlot.h"
+#include "EtatRobotAVide.h"
 
 
-EtatRobotAVideFacePlot * EtatRobotAVideFacePlot::_instance = new EtatRobotAVideFacePlot();
-
-EtatRobotAVideFacePlot::EtatRobotAVideFacePlot(){
-
-}
+EtatRobotAVideFacePlot * EtatRobotAVideFacePlot::_instance = new EtatRobotAVideFacePlot("EtatAVideFacePlot");
 
 EtatRobotAVideFacePlot * EtatRobotAVideFacePlot::getInstance(){
 	return _instance;
 }
 
 EtatRobot * EtatRobotAVideFacePlot::saisir(){
-	return EtatRobotEnChargeFacePlot::getInstance();
+	return EtatRobotChargeFacePlot::getInstance();
 }
 
 EtatRobot * EtatRobotAVideFacePlot::tourner(){

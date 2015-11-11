@@ -4,10 +4,10 @@ auteurs : Molinengo/Soumille
 date : Nov 2015
 */
 
-#ifndef _ETAT_ROBOT_A_VIDE_FACE_PLOT_H_
-#define _ETAT_ROBOT_A_VIDE_FACE_PLOT_H_
+#ifndef _ETAT_ROBOT_EN_CHARGE_FACE_PLOT_H_
+#define _ETAT_ROBOT_EN_CHARGE_FACE_PLOT_H_
 
-#include "EtatRobotChargeFacePlot.h"
+#include "EtatRobotEnRoute.h"
 
 class EtatRobotChargeFacePlot : public EtatRobotEnRoute {
 
@@ -15,7 +15,7 @@ private:
 	static EtatRobotChargeFacePlot * _instance;
 
 protected:
-	EtatRobotChargeFacePlot();
+	EtatRobotChargeFacePlot(string name): EtatRobotEnRoute(name){};
 
 public:
 	static EtatRobotChargeFacePlot * getInstance();

@@ -113,6 +113,30 @@ void Robot::repartir(){
 
 void Robot::notifier(){
 	for(auto i = _afficheurs.begin() ; i != _afficheurs.end() ; ++i){
-			(*i)->afficher("test");
+			(*i)->afficher(this);
 	}
+}
+
+Position Robot::getPosition(){
+	return _position;
+}
+
+string Robot::getDirection(){
+	return _direction;
+}
+
+Objet Robot::getObjet(){
+	return _objetSaisi;
+}
+
+Plot Robot::getPlot(){
+	return _plot;
+}
+
+EtatRobot * Robot::getEtat(){
+	return _etat;
+}
+
+string Robot::getOrdre(){
+	return _ordre;
 }

@@ -7,11 +7,7 @@
 #include "EtatRobotEnRoute.h"
 #include "EtatRobotFiger.h"
 
-EtatRobotEnRoute * EtatRobotEnRoute::_instance = new EtatRobotEnRoute();
-
-EtatRobotEnRoute::EtatRobotEnRoute(){
-
-}
+EtatRobotEnRoute * EtatRobotEnRoute::_instance = new EtatRobotEnRoute("EtatEnRoute");
 
 EtatRobotEnRoute * EtatRobotEnRoute::getInstance(){
 	return _instance;
