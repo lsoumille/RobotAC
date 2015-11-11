@@ -11,8 +11,12 @@ date : Nov 2015
 #include "Objet.h"
 #include "Plot.h"
 #include "Position.h"
+#include "RobotARepresenter.h"
+#include <string>
 
-class Robot{
+using namespace std;
+
+class Robot : public RobotARepresenter {
 
 private:
 	Position  _position;
@@ -33,7 +37,7 @@ public:
 	int evaluerPlot();
 	void figer();
 	void repartir();
-	void afficher();
+	void notifier();
 };
 
 #endif

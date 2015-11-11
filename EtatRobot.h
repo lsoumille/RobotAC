@@ -7,12 +7,6 @@ date : Nov 2015
 #ifndef _ETAT_ROBOT_H_
 #define _ETAT_ROBOT_H_
 
-#include <map>
-#include <string>
-#include <iostream>
-
-using namespace std;
-
 class EtatRobot{
 
 private:

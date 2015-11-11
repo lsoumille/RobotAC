@@ -5,7 +5,7 @@
 */
 
 #include "Robot.h"
-#include "EtatRobotFiger.h"
+#include "RobotARepresenter.h"
 #include <iostream>
 
 using namespace std;
@@ -108,5 +108,11 @@ void Robot::repartir(){
 		_etat = _etat->repartir();
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Fonction indisponible";
+	}
+}
+
+void Robot::notifier(){
+	for(auto i = _afficheurs.begin() ; i != _afficheurs.end() ; ++i){
+			(*i)->afficher("test");
 	}
 }
