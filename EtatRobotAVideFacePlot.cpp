@@ -24,3 +24,7 @@ EtatRobot * EtatRobotAVideFacePlot::saisir(){
 EtatRobot * EtatRobotAVideFacePlot::tourner(){
 	return EtatRobotAVide::getInstance();
 }
+
+EtatRobot * EtatRobotAVideFacePlot::evaluerPlot(){
+	return _instance;
+}

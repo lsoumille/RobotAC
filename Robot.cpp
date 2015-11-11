@@ -91,3 +91,22 @@ void Robot::figer(){
 		cerr << "Fonction indisponible";
 	}
 }
+
+//a test
+void Robot::rencontrerPlot(Plot p){
+	try{
+		_etat = _etat->rencontrerPlot();
+		_plot = p;
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Fonction indisponible";
+	}
+}
+
+//a test
+void Robot::repartir(){
+	try{
+		_etat = _etat->repartir();
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Fonction indisponible";
+	}
+}

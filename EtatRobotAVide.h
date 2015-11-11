@@ -20,4 +20,5 @@ public:
 
 	EtatRobot * avancer();
 	EtatRobot * tourner();
+	EtatRobot * rencontrerPlot();
 };

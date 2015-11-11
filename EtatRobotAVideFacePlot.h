@@ -8,7 +8,6 @@ date : Nov 2015
 #define _ETAT_ROBOT_A_VIDE_FACE_PLOT_H_
 
 #include "EtatRobotEnRoute.h"
-#include <string>
 
 using namespace std;
 
@@ -24,8 +23,8 @@ public:
 	static EtatRobotAVideFacePlot * getInstance();
 
 	EtatRobot * saisir();
-
 	EtatRobot * tourner();
+	EtatRobot * evaluerPlot();
 
 };
 

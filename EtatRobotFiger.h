@@ -25,7 +25,8 @@ protected:
 public:
 	static EtatRobotFiger * getInstance();
 	static void setEtatRobotPrecedent(EtatRobot *);
-	static EtatRobot * getEtatRobotPrecedent();
+
+	EtatRobot * repartir();
 
 };
 

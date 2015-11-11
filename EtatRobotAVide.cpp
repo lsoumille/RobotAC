@@ -23,3 +23,7 @@ EtatRobot * EtatRobotAVide::avancer(){
 EtatRobot * EtatRobotAVide::tourner(){
 	return _instance;
 }
+
+EtatRobot * EtatRobotAVide::rencontrerPlot(){
+	return EtatRobotAVideFacePlot::getInstance();
+}

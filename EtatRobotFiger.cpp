@@ -21,6 +21,6 @@ void EtatRobotFiger::setEtatRobotPrecedent(EtatRobot * ep){
 	_etatRobotPrecedent = ep;
 }
 
-EtatRobot * EtatRobotFiger::getEtatRobotPrecedent(){
+EtatRobot * EtatRobotFiger::repartir(){
 	return _etatRobotPrecedent;
 }

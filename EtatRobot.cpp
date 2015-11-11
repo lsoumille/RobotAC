@@ -9,13 +9,14 @@
 #include "EtatRobotFiger.h"
 
 EtatRobot * EtatRobot::_instance =  new EtatRobot();
-EtatRobot * EtatRobot::_etatRobotInitial = EtatRobotFiger::getInstance();
+EtatRobot * EtatRobot::_etatRobotInitial;  
 
 EtatRobot::EtatRobot(){
 }
 
 EtatRobot * EtatRobot::getEtatInitial(){
-	return EtatRobotFiger::getInstance();//_etatRobotInitial;//_etatRobotInitial;
+	_etatRobotInitial = EtatRobotFiger::getInstance();
+	return _etatRobotInitial;
 }
 
 EtatRobot * EtatRobot::getInstance(){
