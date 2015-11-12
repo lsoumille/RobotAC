@@ -11,19 +11,20 @@ date : Nov 2015
 
 class EtatRobotEnCharge : public EtatRobotEnRoute {
 
-private:
-	static EtatRobotEnCharge * _instance;
+	private:
+		static EtatRobotEnCharge * _instance;
 
-protected:
-	EtatRobotEnCharge(string name): EtatRobotEnRoute(name){};
+	protected:
+		EtatRobotEnCharge(string name): EtatRobotEnRoute(name){};
 
-public:
-	static EtatRobotEnCharge * getInstance();
+	public:
+		static EtatRobotEnCharge * getInstance();
 
-	EtatRobot * avancer();
-	EtatRobot * peser();
-	EtatRobot * tourner();
-	EtatRobot * rencontrerPlot();
+		EtatRobot * avancer();
+		EtatRobot * peser();
+		EtatRobot * tourner();
+		EtatRobot * rencontrerPlot();
+		EtatRobot * figer();
 };
 
 #endif

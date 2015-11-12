@@ -8,13 +8,13 @@ date : Nov 2015
 #define _PLOT_H_
 
 class Plot {
-private:
-	int _hauteur;
+	private:
+		int _hauteur;
 
-public:
-	Plot(int i): _hauteur(i){}; 
+	public:
+		Plot(int i): _hauteur(i){}; 
 
-	int getHauteur();
+		int getHauteur();
 };
 
 #endif

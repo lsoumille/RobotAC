@@ -13,19 +13,20 @@ date : Nov 2015
 using namespace std;
 
 class EtatRobotAVide : public EtatRobotEnRoute {
+	
+	private:
+		static EtatRobotAVide * _instance;
 
-private:
-	static EtatRobotAVide * _instance;
+	protected:
+		EtatRobotAVide(string name): EtatRobotEnRoute(name){};
 
-protected:
-	EtatRobotAVide(string name): EtatRobotEnRoute(name){};
+	public:
+		static EtatRobotAVide * getInstance();
 
-public:
-	static EtatRobotAVide * getInstance();
-
-	EtatRobot * avancer();
-	EtatRobot * tourner();
-	EtatRobot * rencontrerPlot();
+		EtatRobot * avancer();
+		EtatRobot * tourner();
+		EtatRobot * rencontrerPlot();
+		EtatRobot * figer();
 };
 
 #endif

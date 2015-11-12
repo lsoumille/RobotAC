@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//constructeur
 Robot::Robot(): _position(0,0),
 				_direction("N"),
 				_objetSaisi(0),
@@ -17,126 +18,174 @@ Robot::Robot(): _position(0,0),
 	_etat = EtatRobot::getEtatInitial();
 }
 
-//a test
+/*
+Le robot saisit l'objet passé en paramètre
+*/
 void Robot::saisir(Objet O){
 	try {
 		_etat = _etat->saisir();
 		_objetSaisi = O;
+		_ordre = "saisir";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
-//a test
+/*
+Le robot se déplace à la position passée en paramètre
+*/
 void Robot::avancer(int x, int y){
 	try {
 		_etat = _etat->avancer();
 		_position.setx(x);
-		_position.sety(y); 
+		_position.sety(y);
+		_ordre = "avancer";
+		notifier(); 
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
-//a test
+/*
+Le robot tourne dans la direction passée en paramètre
+si ce n'est pas la même
+*/
 void Robot::tourner(string direction){
 	try {
 		if(direction != _direction){
 			_etat = _etat->tourner();
 			_direction = direction;
-			_plot = Plot(0);
+			_plot = Plot(0);	
 		}
+		_ordre = "tourner";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
-//a test
+/*
+Le robot pose l'objet qu'il détient
+*/
 void Robot::poser(){
 	try {
 		_etat = _etat->poser();
 		_objetSaisi = Objet(0);
+		_ordre = "poser";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	} 
 }
 
-//a test
+/*
+Retourne le poids de l'objet porté par le robot
+0 si il ne porte rien
+*/
 int Robot::peser(){
 	try {
 		_etat = _etat->peser();
+		_ordre = "peser";
+		notifier();
 		return _objetSaisi.getPoids();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 	return 0; 
 }
 
-//a test
+/*
+Retourne la hauteur du plot devant le robot
+0 si il n'y en a pas
+*/
 int Robot::evaluerPlot(){
 	try {
 		_etat = _etat->evaluerPlot();
+		_ordre = "evaluerPlot";
+		notifier();
 		return _plot.getHauteur();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 	return 0;
 }
 
-//a test
+/*
+Fige le robot
+*/
 void Robot::figer(){
-	try{
+	try {
 		_etat = _etat->figer();
+		_ordre = "figer";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
-//a test
+/*
+Associe le plot au robot
+*/
 void Robot::rencontrerPlot(Plot p){
-	try{
+	try {
 		_etat = _etat->rencontrerPlot();
 		_plot = p;
+		_ordre = "rencontrerPlot";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
-//a test
+/*
+Fonction qui remet le robot en route
+*/
 void Robot::repartir(){
-	try{
+	try {
 		_etat = _etat->repartir();
+		_ordre = "repartir";
+		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible";
+		cerr << "Fonction indisponible" << endl;
 	}
 }
 
+/*
+Indique aux afficheurs de faire une mise a jour
+*/
 void Robot::notifier(){
 	for(auto i = _afficheurs.begin() ; i != _afficheurs.end() ; ++i){
 			(*i)->afficher(this);
 	}
 }
 
+//retourne la position
 Position Robot::getPosition(){
 	return _position;
 }
 
+//retourne la direction
 string Robot::getDirection(){
 	return _direction;
 }
 
+//retourne l'objet
 Objet Robot::getObjet(){
 	return _objetSaisi;
 }
 
+//retourne le plot
 Plot Robot::getPlot(){
 	return _plot;
 }
 
+//retourne l'état
 EtatRobot * Robot::getEtat(){
 	return _etat;
 }
 
+//retourne l'ordre
 string Robot::getOrdre(){
 	return _ordre;
 }

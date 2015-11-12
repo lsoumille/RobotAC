@@ -6,7 +6,9 @@
 
 #include "EtatRobotEnCharge.h"
 #include "EtatRobotChargeFacePlot.h"
+#include "EtatRobotFiger.h"
 
+//singleton
 EtatRobotEnCharge * EtatRobotEnCharge::_instance =  new EtatRobotEnCharge("EtatEnCharge");
 
 EtatRobotEnCharge * EtatRobotEnCharge::getInstance(){
@@ -25,6 +27,18 @@ EtatRobot * EtatRobotEnCharge::tourner(){
 	return _instance;
 }
 
+/*
+Retourne le singleton de l'EtatRobotChargeFacePlot
+*/
 EtatRobot * EtatRobotEnCharge::rencontrerPlot(){
 	return EtatRobotChargeFacePlot::getInstance();
+}
+
+/*
+Stocke l'etat avant figeage
+Retourne le singleton EtatFiger
+*/
+EtatRobot * EtatRobotEnCharge::figer(){
+	EtatRobotFiger::setEtatRobotPrecedent(_instance);
+	return EtatRobotFiger::getInstance();
 }

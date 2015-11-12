@@ -14,19 +14,19 @@ using namespace std;
 
 class EtatRobotFiger : public EtatRobot{
 
-private:
-	//stocker précedent
-	static EtatRobotFiger * _instance;
-	static EtatRobot * _etatRobotPrecedent;
+	private:
+		//stocker précedent
+		static EtatRobotFiger * _instance;
+		static EtatRobot * _etatRobotPrecedent;
 
-protected:
-	EtatRobotFiger(string name):EtatRobot(name){};
+	protected:
+		EtatRobotFiger(string name):EtatRobot(name){};
 
-public:
-	static EtatRobotFiger * getInstance();
-	static void setEtatRobotPrecedent(EtatRobot *);
+	public:
+		static EtatRobotFiger * getInstance();
+		static void setEtatRobotPrecedent(EtatRobot *);
 
-	EtatRobot * repartir();
+		EtatRobot * repartir();
 
 };
 

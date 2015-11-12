@@ -5,8 +5,6 @@
 */
 
 #include "Afficheur.h"
-#include <iostream>
 
 void Afficheur::afficher(Robot * r){
-	cout << "salut";
 }

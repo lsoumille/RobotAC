@@ -10,14 +10,11 @@ date : Nov 2015
 #include "Afficheur.h"
 #include "Robot.h"
 
-using namespace std;
-
-
 class AfficheurPrincipal : public Afficheur{
-
-public:
-	AfficheurPrincipal();
-	void afficher(Robot *);
+	
+	public:
+		AfficheurPrincipal(){};
+		void afficher(Robot *);
 };
 
 #endif

@@ -13,10 +13,16 @@ EtatRobotFiger * EtatRobotFiger::getInstance(){
 	return _instance;
 }
 
+/*
+Enregistre l'etat dans _etatRobotPrecedent
+*/
 void EtatRobotFiger::setEtatRobotPrecedent(EtatRobot * ep){
 	_etatRobotPrecedent = ep;
 }
 
+/*
+Renvoie l'etat avant figeage
+*/
 EtatRobot * EtatRobotFiger::repartir(){
 	return _etatRobotPrecedent;
 }

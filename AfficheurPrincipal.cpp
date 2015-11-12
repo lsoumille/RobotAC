@@ -7,12 +7,12 @@
 #include "AfficheurPrincipal.h"
 #include <iostream>
 
-AfficheurPrincipal::AfficheurPrincipal(){
-	
-}
-
+/*
+Affiche toutes les informations du robot passé en paramètre
+dans la console
+*/
 void AfficheurPrincipal::afficher(Robot * r){
-	cout << "> Statut du Robot <" << endl
+	cout << ">> Statut du Robot <<" << endl
 		 << "Ordre donné : " << r->getOrdre() << endl
 		 << "Etat : " << r->getEtat()->getName() << endl
 		 << "Position : x = " << r->getPosition().getx()
@@ -24,6 +24,5 @@ void AfficheurPrincipal::afficher(Robot * r){
 		cout << "Le robot est figé" << endl;
 	else 
 		cout << "Le robot est attente d'ordre" << endl;
-
-
+	cout << "> ------------------------------ <" << endl;
 }

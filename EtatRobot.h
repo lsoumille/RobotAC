@@ -13,34 +13,32 @@ using namespace std;
 
 class EtatRobot{
 
-private:
-	static EtatRobot * _instance;
-	static EtatRobot * _etatRobotInitial;
-	string _name;
+	private:
+		static EtatRobot * _etatRobotInitial;
+		string _name;
 
-protected:
-	EtatRobot(string nom): _name(nom){};
+	protected:
+		EtatRobot(string nom): _name(nom){};
 
-public:
-	static EtatRobot * getInstance();
-	static EtatRobot * getEtatInitial();
+	public:
+		static EtatRobot * getEtatInitial();
 
-	virtual EtatRobot * saisir();
-	virtual EtatRobot * avancer();
-	virtual EtatRobot * tourner();
-	virtual EtatRobot * poser();
-	virtual EtatRobot * peser();
-	virtual EtatRobot * rencontrerPlot();
-	virtual EtatRobot * figer();
-	virtual EtatRobot * repartir();
-	virtual EtatRobot * evaluerPlot();
-	virtual EtatRobot * afficher();
+		virtual EtatRobot * saisir();
+		virtual EtatRobot * avancer();
+		virtual EtatRobot * tourner();
+		virtual EtatRobot * poser();
+		virtual EtatRobot * peser();
+		virtual EtatRobot * rencontrerPlot();
+		virtual EtatRobot * figer();
+		virtual EtatRobot * repartir();
+		virtual EtatRobot * evaluerPlot();
+		virtual EtatRobot * afficher();
 
-	//getter
-	string getName();
+		//getter
+		string getName();
 
-	//exceptions
-	class UnavailableFunction{};
+		//exception
+		class UnavailableFunction{};
 };
 
 #endif

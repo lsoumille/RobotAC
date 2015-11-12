@@ -13,19 +13,19 @@ using namespace std;
 
 class EtatRobotAVideFacePlot : public EtatRobotEnRoute {
 
-private:
-	static EtatRobotAVideFacePlot * _instance;
+	private:
+		static EtatRobotAVideFacePlot * _instance;
 
-protected:
-	EtatRobotAVideFacePlot(string name): EtatRobotEnRoute(name){};
+	protected:
+		EtatRobotAVideFacePlot(string name): EtatRobotEnRoute(name){};
 
-public:
-	static EtatRobotAVideFacePlot * getInstance();
+	public:
+		static EtatRobotAVideFacePlot * getInstance();
 
-	EtatRobot * saisir();
-	EtatRobot * tourner();
-	EtatRobot * evaluerPlot();
-
+		EtatRobot * saisir();
+		EtatRobot * tourner();
+		EtatRobot * evaluerPlot();
+		EtatRobot * figer();
 };
 
 #endif

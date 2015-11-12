@@ -5,21 +5,14 @@
 */
 
 #include "EtatRobot.h"
-#include <iostream>
-#include "EtatRobotFiger.h"
 #include "EtatRobotAVide.h"
 
-EtatRobot * EtatRobot::_instance =  new EtatRobot("EtatRobot");
+//singleton
 EtatRobot * EtatRobot::_etatRobotInitial;  
 
 EtatRobot * EtatRobot::getEtatInitial(){
-	_etatRobotInitial = EtatRobotFiger::getInstance();
 	_etatRobotInitial = EtatRobotAVide::getInstance();
 	return _etatRobotInitial;
-}
-
-EtatRobot * EtatRobot::getInstance(){
-	return _instance;
 }
 
 EtatRobot * EtatRobot::saisir(){
@@ -62,6 +55,7 @@ EtatRobot * EtatRobot::afficher(){
 	throw UnavailableFunction();
 }
 
+//getter
 string EtatRobot::getName(){
 	return _name;
 }

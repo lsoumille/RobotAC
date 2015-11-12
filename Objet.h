@@ -9,13 +9,13 @@ date : Nov 2015
 
 class Objet {
 
-private:
-	int _poids;
+	private:
+		int _poids;
 
-public:
-	Objet(int p): _poids(p){};
+	public:
+		Objet(int p): _poids(p){};
 
-	int getPoids();
+		int getPoids();
 };
 
 #endif

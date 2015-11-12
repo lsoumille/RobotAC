@@ -12,17 +12,18 @@ date : Nov 2015
 
 using namespace std;
 
-class RobotARepresenter{
+class RobotARepresenter {
 
-protected:
-	vector<Afficheur*> _afficheurs;
+	protected:
+		vector<Afficheur*> _afficheurs;
 
-public:
-	RobotARepresenter();
-	~RobotARepresenter();
-	void attacher(Afficheur *);
-    void detacher(Afficheur *);
-    void notifier();
+	public:
+		RobotARepresenter();
+		~RobotARepresenter();
+
+		void attacher(Afficheur *);
+	    void detacher(Afficheur *);
+	    void notifier();
 };
 
 #endif

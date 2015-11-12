@@ -10,21 +10,21 @@ date : Nov 2015
 #include "EtatRobotEnRoute.h"
 
 class EtatRobotChargeFacePlot : public EtatRobotEnRoute {
+	
+	private:
+		static EtatRobotChargeFacePlot * _instance;
 
-private:
-	static EtatRobotChargeFacePlot * _instance;
+	protected:
+		EtatRobotChargeFacePlot(string name): EtatRobotEnRoute(name){};
 
-protected:
-	EtatRobotChargeFacePlot(string name): EtatRobotEnRoute(name){};
+	public:
+		static EtatRobotChargeFacePlot * getInstance();
 
-public:
-	static EtatRobotChargeFacePlot * getInstance();
-
-	EtatRobot * tourner();
-	EtatRobot * poser();
-	EtatRobot * peser();
-	EtatRobot * evaluerPlot();
-
+		EtatRobot * tourner();
+		EtatRobot * poser();
+		EtatRobot * peser();
+		EtatRobot * evaluerPlot();
+		EtatRobot * figer();
 };
 
 #endif

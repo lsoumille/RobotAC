@@ -14,16 +14,9 @@ using namespace std;
 
 class EtatRobotEnRoute : public EtatRobot{
 
-private:
-	static EtatRobotEnRoute * _instance;
+	protected:
+		EtatRobotEnRoute(string name): EtatRobot(name){};
 
-protected:
-	EtatRobotEnRoute(string name): EtatRobot(name){};
-
-public:
-	static EtatRobotEnRoute * getInstance();
-
-	EtatRobot * figer();
 };
 
 #endif
