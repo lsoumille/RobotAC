@@ -23,6 +23,6 @@ void AfficheurPrincipal::afficher(Robot * r){
 	if(r->getOrdre() == "figer")
 		cout << "Le robot est figé" << endl;
 	else 
-		cout << "Le robot est attente d'ordre" << endl;
+		cout << "Le robot est en attente d'ordre" << endl;
 	cout << "> ------------------------------ <" << endl;
 }
