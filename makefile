@@ -2,7 +2,7 @@ CC = g++
 
 option = -g -W -Wall -std=c++11 
 
-OBJ_FICHIER = index.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o RobotARepresenter.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o
+OBJ_FICHIER = index.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o
 
 EXE = executionRobot
 
@@ -58,10 +58,6 @@ Position.o: Position.h Position.cpp
 #Classe Plot
 Plot.o: Plot.h Plot.cpp
 	$(CC) $(option) -c Plot.cpp -o Plot.o
-
-#Classe RobotARepresenter
-RobotARepresenter.o : RobotARepresenter.h RobotARepresenter.cpp
-	$(CC) $(option) -c RobotARepresenter.cpp -o RobotARepresenter.o
 
 #Classe Afficheur
 Afficheur.o : Afficheur.h Afficheur.cpp

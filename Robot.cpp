@@ -5,7 +5,6 @@
 */
 
 #include "Robot.h"
-#include "RobotARepresenter.h"
 #include <iostream>
 
 using namespace std;
@@ -148,6 +147,25 @@ void Robot::repartir(){
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Fonction indisponible" << endl;
+	}
+}
+
+/*
+Ajoute un afficheur qui se mettra à jour 
+lors des changements sur le robot
+*/
+void Robot::attacher(Afficheur * a){
+	_afficheurs.push_back(a);
+}
+
+/*
+Retire un afficheur du vector
+*/
+void Robot::detacher(Afficheur * a){
+	for(auto i = _afficheurs.begin() ; i != _afficheurs.end() 
+									 && _afficheurs.size() != 0 ; ++i){
+		if(*i == a)
+			_afficheurs.erase(i);
 	}
 }
 

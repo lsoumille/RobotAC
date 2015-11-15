@@ -11,12 +11,13 @@ date : Nov 2015
 #include "Objet.h"
 #include "Plot.h"
 #include "Position.h"
-#include "RobotARepresenter.h"
+#include "Afficheur.h"
+#include <vector>
 #include <string>
 
 using namespace std;
 
-class Robot : public RobotARepresenter {
+class Robot {
 
 private:
 	Position  _position;
@@ -25,6 +26,7 @@ private:
 	Plot _plot;
 	EtatRobot * _etat;
 	string _ordre;
+	vector<Afficheur*> _afficheurs;
 	
 public:
 	Robot();
@@ -39,6 +41,8 @@ public:
 	int evaluerPlot();
 	void figer();
 	void repartir();
+	void attacher(Afficheur *);
+	void detacher(Afficheur *);
 	void notifier();
 
 	//getters
