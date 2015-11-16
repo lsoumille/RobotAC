@@ -8,6 +8,7 @@ date : Nov 2015
 #define _POSITION_H_
 
 class Position {
+	
 private:
 	int _x;
 	int _y;

@@ -15,7 +15,6 @@ EtatRobotAVide * EtatRobotAVide::getInstance(){
 	return _instance;
 }
 
-
 EtatRobot * EtatRobotAVide::avancer(){
 	return _instance;
 }

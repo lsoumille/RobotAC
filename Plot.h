@@ -8,6 +8,7 @@ date : Nov 2015
 #define _PLOT_H_
 
 class Plot {
+	
 	private:
 		int _hauteur;
 

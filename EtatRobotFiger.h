@@ -15,7 +15,6 @@ using namespace std;
 class EtatRobotFiger : public EtatRobot{
 
 	private:
-		//stocker précedent
 		static EtatRobotFiger * _instance;
 		static EtatRobot * _etatRobotPrecedent;
 
