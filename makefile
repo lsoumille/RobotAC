@@ -2,7 +2,7 @@ CC = g++
 
 option = -g -W -Wall -std=c++11 
 
-OBJ_FICHIER = main.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o
+OBJ_FICHIER = main.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o LecteurCommande.o Commande.o CommandeRobot.o CommandeRepartir.o CommandeFiger.o CommandeSaisir.o CommandePeser.o CommandeRencontrerPlot.o CommandePoser.o CommandeEvaluerPlot.o CommandeTourner.o CommandeAvancer.o
 
 EXE = executionRobot
 
@@ -66,5 +66,53 @@ Afficheur.o : Afficheur.h Afficheur.cpp
 #Classe AfficheurPrincipal
 AfficheurPrincipal.o : AfficheurPrincipal.h AfficheurPrincipal.cpp
 	$(CC) $(option) -c AfficheurPrincipal.cpp -o AfficheurPrincipal.o
+
+#Classe LecteurCommande
+LecteurCommande.o : LecteurCommande.h LecteurCommande.cpp
+	$(CC) $(option) -c LecteurCommande.cpp -o LecteurCommande.o
+
+#Classe Commande
+Commande.o : Commande.h Commande.cpp
+	$(CC) $(option) -c Commande.cpp -o Commande.o
+
+#Classe CommandeRobot
+CommandeRobot.o : CommandeRobot.h CommandeRobot.cpp
+	$(CC) $(option) -c CommandeRobot.cpp -o CommandeRobot.o
+
+#Classe CommandeRepartir
+CommandeRepartir.o : CommandeRepartir.h CommandeRepartir.cpp
+	$(CC) $(option) -c CommandeRepartir.cpp -o CommandeRepartir.o
+
+#Classe CommandeFiger
+CommandeFiger.o : CommandeFiger.h CommandeFiger.cpp
+	$(CC) $(option) -c CommandeFiger.cpp -o CommandeFiger.o
+
+#Classe CommandeSaisir
+CommandeSaisir.o : CommandeSaisir.h CommandeSaisir.cpp
+	$(CC) $(option) -c CommandeSaisir.cpp -o CommandeSaisir.o
+
+#Classe CommandePeser
+CommandePeser.o : CommandePeser.h CommandePeser.cpp
+	$(CC) $(option) -c CommandePeser.cpp -o CommandePeser.o
+
+#Classe CommandeRencontrerPlot
+RencontrerPlot.o : RencontrerPlot.h RencontrerPlot.cpp
+	$(CC) $(option) -c RencontrerPlot.cpp -o RencontrerPlot.o
+
+#Classe CommandePoser
+CommandePoser.o : CommandePoser.h CommandePoser.cpp
+	$(CC) $(option) -c CommandePoser.cpp -o CommandePoser.o
+
+#Classe CommandeEvaluerPlot
+CommandeEvaluerPlot.o : CommandeEvaluerPlot.h CommandeEvaluerPlot.cpp
+	$(CC) $(option) -c CommandeEvaluerPlot.cpp -o CommandeEvaluerPlot.o
+
+#Classe CommandeTourner
+CommandeTourner.o : CommandeTourner.h CommandeTourner.cpp
+	$(CC) $(option) -c CommandeTourner.cpp -o CommandeTourner.o
+
+#Classe CommandeAvancer
+CommandeAvancer.o : CommandeAvancer.h CommandeAvancer.cpp
+	$(CC) $(option) -c CommandeAvancer.cpp -o CommandeAvancer.o
 clean: 
 	rm -vf *.o executionRobot
