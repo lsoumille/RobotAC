@@ -14,9 +14,15 @@ class CommandePoser;
 
 class CommandePoser: public CommandeRobot
 {
-	public:
+private:
+	static CommandePoser * _instance;
 
-		void execute();
+protected:
+	CommandePoser() : CommandeRobot("Poser"){};
+
+public:
+	Commande * constructeurVirtuel(LecteurCommande *);
+	void execute();
 };
 
 #endif

@@ -6,6 +6,12 @@
 
 #include "CommandePeser.h"
 
+CommandePeser * CommandePeser::_instance = new CommandePeser();
+
+Commande * CommandePeser::constructeurVirtuel(LecteurCommande * lect){
+	return new CommandePeser();
+}
+
 void CommandePeser::execute() {
 	throw "Not yet implemented";
 }

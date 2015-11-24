@@ -8,11 +8,20 @@ date : Nov 2015
 #define __CommandeAvancer_h__
 
 #include "CommandeRobot.h"
+#include "Position.h"
 
 class CommandeAvancer: public CommandeRobot
 {
-	public:
-		void execute();
+private:
+	static CommandeAvancer * _instance;
+	Position _pos;
+
+protected:
+	CommandeAvancer() : CommandeRobot("Avancer"), _pos(0,0){};
+
+public:
+	Commande * constructeurVirtuel(LecteurCommande *);
+	void execute();
 };
 
 #endif

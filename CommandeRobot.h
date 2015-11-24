@@ -1,5 +1,5 @@
 /*
-classe : EtatRobot.h
+classe : CommandeRobot.h
 auteurs : Molinengo/Soumille
 date : Nov 2015
 */
@@ -10,12 +10,11 @@ date : Nov 2015
 #include "Robot.h"
 #include "Commande.h"
 
-__abstract class CommandeRobot: public Commande
+class CommandeRobot: public Commande
 {
-	public:
-		Robot* _Robot;
-
-		void execute();
+protected:
+	Robot* _Robot;
+	CommandeRobot(string s):Commande(s){};
 };
 
 #endif

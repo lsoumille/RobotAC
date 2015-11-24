@@ -6,7 +6,15 @@
 
 #include "CommandeAvancer.h"
 
-void CommandeAvancer::execute() {
-	throw "Not yet implemented";
+CommandeAvancer * CommandeAvancer::_instance = new CommandeAvancer();
+
+Commande * CommandeAvancer::constructeurVirtuel(LecteurCommande * lect){
+	//récupération d'argument
+	return new CommandeAvancer(); 
 }
+
+void CommandeAvancer::execute() {
+	_Robot->avancer(1,1);
+}
+
 

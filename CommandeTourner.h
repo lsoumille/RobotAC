@@ -11,9 +11,16 @@ date : Nov 2015
 
 class CommandeTourner: public CommandeRobot
 {
-	public:
+private:
+	static CommandeTourner * _instance;
+	string _direction;
 
-		void execute();
+protected:
+	CommandeTourner() : CommandeRobot("Tourner"), _direction("N"){};
+
+public:
+	Commande * constructeurVirtuel(LecteurCommande *);
+	void execute();
 };
 
 #endif

@@ -8,13 +8,20 @@ date : Nov 2015
 #define __CommandeRencontrerPlot_h__
 
 #include "CommandeRobot.h"
-
+#include "Plot.h"
 
 class CommandeRencontrerPlot: public CommandeRobot
 {
-	public:
+private:
+	static CommandeRencontrerPlot * _instance;
+	Plot _plot;
 
-		void execute();
+protected:
+	CommandeRencontrerPlot() : CommandeRobot("RencontrerPlot"), _plot(0){};
+
+public:
+	Commande * constructeurVirtuel(LecteurCommande *);
+	void execute();
 };
 
 #endif

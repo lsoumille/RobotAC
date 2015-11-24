@@ -96,8 +96,8 @@ CommandePeser.o : CommandePeser.h CommandePeser.cpp
 	$(CC) $(option) -c CommandePeser.cpp -o CommandePeser.o
 
 #Classe CommandeRencontrerPlot
-RencontrerPlot.o : RencontrerPlot.h RencontrerPlot.cpp
-	$(CC) $(option) -c RencontrerPlot.cpp -o RencontrerPlot.o
+CommandeRencontrerPlot.o : CommandeRencontrerPlot.h CommandeRencontrerPlot.cpp
+	$(CC) $(option) -c CommandeRencontrerPlot.cpp -o CommandeRencontrerPlot.o
 
 #Classe CommandePoser
 CommandePoser.o : CommandePoser.h CommandePoser.cpp
