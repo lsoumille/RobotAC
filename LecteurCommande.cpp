@@ -5,3 +5,30 @@
 */
 
 #include "LecteurCommande.h"
+ using namespace std;
+
+
+ LecteurCommande::LecteurCommand(){
+ 	_pos=new Position();
+ }
+void LecteurCommande::read(){
+
+	string _commande;
+	cin >> _commande;
+	if(_commande=="AVANCER"){
+		int _x,_y;
+		cin>>_x;
+		cin>>_y;
+		_pos.setx(_x);
+		_pos.sety(_y);
+	}
+	if(_commande=="SAISIR"){
+		cin>>_paramInt;
+
+	}
+	if(_commande=="RENCONTRER"){
+		cin>>_paramInt;
+	}
+}
+
+

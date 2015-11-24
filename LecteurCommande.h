@@ -11,6 +11,7 @@ date : Nov 2015
 #include <utility>
 #include <vector>
 #include "Commande.h"
+#include "Position.h"
 
 using namespace std;
 
@@ -18,9 +19,15 @@ class Commande;
 
 class LecteurCommande
 {
-/*
-Pour papy
-*/ 
+private:
+	int _paramInt;
+	Position _pos;
+
+ public:
+ 		LecteurCommande();
+ 		void read();
+ 		Position const getPosition(){return _pos;};
+ 		int const getInteger(){return _paramInt;};
 };
 
 #endif

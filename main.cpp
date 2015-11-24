@@ -56,5 +56,12 @@ int main(){
 	rob.detacher(affi1);
 	//Ne doit pas s'afficher
 	rob.tourner("S");
+
+
+	/**CODE POUR LECTEUR 
+	LecteurCommand Hannibal= new LecteurCommand();
+	Hannibal.read();
+	**/
+
 	return 0;
 }
