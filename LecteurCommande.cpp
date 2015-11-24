@@ -24,6 +24,7 @@ void LecteurCommande::read(){
 		cin>>_y;
 		_pos.setx(_x);
 		_pos.sety(_y);
+
 	}
 	if(_commande=="SAISIR"){
 		cin>>_paramInt;
@@ -32,6 +33,8 @@ void LecteurCommande::read(){
 	if(_commande=="RENCONTRER"){
 		cin>>_paramInt;
 	}
+
+	Commande::nouvelleCommande(_commande);
 }
 
 
