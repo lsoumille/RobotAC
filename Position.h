@@ -14,6 +14,7 @@ private:
 	int _y;
 
 public:
+	Position():_x(0),_y(0){};
 	Position(int x, int y): _x(x), _y(y){};
 
 	//setters

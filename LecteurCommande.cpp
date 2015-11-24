@@ -5,12 +5,15 @@
 */
 
 #include "LecteurCommande.h"
+#include "Position.h"
  using namespace std;
 
 
- LecteurCommande::LecteurCommand(){
- 	_pos=new Position();
+ LecteurCommande::LecteurCommande(){
+ 	_pos= Position();
  }
+
+
 void LecteurCommande::read(){
 
 	string _commande;

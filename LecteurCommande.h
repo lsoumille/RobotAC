@@ -26,8 +26,8 @@ private:
  public:
  		LecteurCommande();
  		void read();
- 		Position const getPosition(){return _pos;};
- 		int const getInteger(){return _paramInt;};
+ 		Position getPosition(){return _pos;};
+ 		int getInteger(){return _paramInt;};
 };
 
 #endif
