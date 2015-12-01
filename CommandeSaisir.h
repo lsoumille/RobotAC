@@ -11,9 +11,16 @@ date : Nov 2015
 
 class CommandeSaisir: public CommandeRobot
 {
-	public:
+private:
+	static CommandeSaisir * _instance;
+	Objet _obj;
 
-		void execute();
+protected:
+	CommandeSaisir() : CommandeRobot("Saisir"), _obj(0){};
+
+public:
+	Commande * constructeurVirtuel(LecteurCommande *);
+	void execute();
 };
 
 #endif

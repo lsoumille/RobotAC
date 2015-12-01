@@ -13,6 +13,6 @@ Commande * CommandeEvaluerPlot::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeEvaluerPlot::execute() {
-	throw "Not yet implemented";
+	_Robot->evaluerPlot();
 }
 

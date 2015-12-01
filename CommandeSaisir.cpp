@@ -6,7 +6,15 @@
 
 #include "CommandeSaisir.h"
 
+
+CommandeSaisir * CommandeSaisir::_instance = new CommandeSaisir();
+
+Commande * CommandeSaisir::constructeurVirtuel(LecteurCommande * lect){
+	//récupération d'argument
+	return new CommandeSaisir(); 
+}
+
 void CommandeSaisir::execute() {
-	throw "Not yet implemented";
+	_Robot->saisir(_obj);
 }
 

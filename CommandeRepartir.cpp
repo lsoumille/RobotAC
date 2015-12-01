@@ -7,7 +7,14 @@
 #include "CommandeRepartir.h"
 #include "CommandeRobot.h"
 
+CommandeRepartir * CommandeRepartir::_instance = new CommandeRepartir();
+
+Commande * CommandeRepartir::constructeurVirtuel(LecteurCommande * lect){
+	//récupération d'argument
+	return new CommandeRepartir(); 
+}
+
 void CommandeRepartir::execute() {
-	throw "Not yet implemented";
+	_Robot->repartir();
 }
 

@@ -13,6 +13,25 @@
  	_pos= Position();
  }
 
+//ExecuteCommandeByString()
+/*
+prompt 
+nouvelleCommande(getString)
+execute
+*/
+//getString
+/*
+return cin >> str
+*/
+
+//getInt
+/*
+return cin >> int
+*/
+
+//getCommande
+/*
+*/
 
 void LecteurCommande::read(){
 

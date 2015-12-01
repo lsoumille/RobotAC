@@ -15,6 +15,6 @@ Commande * CommandeTourner::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeTourner::execute() {
-	throw "Not yet implemented";
+	_Robot->tourner(_direction);
 }
 

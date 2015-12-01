@@ -14,6 +14,6 @@ Commande * CommandeRencontrerPlot::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeRencontrerPlot::execute() {
-	throw "Not yet implemented";
+	_Robot->rencontrerPlot(_plot);
 }
 

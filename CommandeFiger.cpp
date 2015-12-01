@@ -13,6 +13,6 @@ Commande * CommandeFiger::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeFiger::execute() {
-	throw "Not yet implemented";
+	_Robot->figer();
 }
 

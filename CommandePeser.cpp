@@ -13,6 +13,6 @@ Commande * CommandePeser::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandePeser::execute() {
-	throw "Not yet implemented";
+	_Robot->peser();
 }
 
