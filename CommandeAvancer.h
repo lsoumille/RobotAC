@@ -17,7 +17,7 @@ private:
 	Position _pos;
 
 protected:
-	CommandeAvancer() : CommandeRobot("Avancer"), _pos(0,0){};
+	CommandeAvancer(int x, int y) : CommandeRobot("Avancer"), _pos(x,y){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

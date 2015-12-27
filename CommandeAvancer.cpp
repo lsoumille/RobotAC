@@ -6,15 +6,16 @@
 
 #include "CommandeAvancer.h"
 
-CommandeAvancer * CommandeAvancer::_instance = new CommandeAvancer();
+CommandeAvancer * CommandeAvancer::_instance = new CommandeAvancer(0,0);
 
 Commande * CommandeAvancer::constructeurVirtuel(LecteurCommande * lect){
-	//récupération d'argument
-	return new CommandeAvancer(); 
+	int x = lect->getInt();
+	int y = lect->getInt();
+	return new CommandeAvancer(x,y); 
 }
 
 void CommandeAvancer::execute() {
-	_Robot->avancer(1,1);
+	_Robot->avancer(_pos.getx(), _pos.gety());
 }
 
 

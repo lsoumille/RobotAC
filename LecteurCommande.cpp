@@ -31,7 +31,20 @@ return cin >> int
 
 //getCommande
 /*
+return 
 */
+
+int LecteurCommande::getInt(){
+	int value;
+	cin >> value;
+	return value;
+}
+
+string LecteurCommande::getStr(){
+	string value;
+	cin >> value;
+	return value;
+}
 
 void LecteurCommande::read(){
 

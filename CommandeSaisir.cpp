@@ -7,11 +7,11 @@
 #include "CommandeSaisir.h"
 
 
-CommandeSaisir * CommandeSaisir::_instance = new CommandeSaisir();
+CommandeSaisir * CommandeSaisir::_instance = new CommandeSaisir(0);
 
 Commande * CommandeSaisir::constructeurVirtuel(LecteurCommande * lect){
-	//récupération d'argument
-	return new CommandeSaisir(); 
+	int poids = lect->getInt();
+	return new CommandeSaisir(poids); 
 }
 
 void CommandeSaisir::execute() {

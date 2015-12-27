@@ -6,11 +6,11 @@
 
 #include "CommandeRencontrerPlot.h"
 
-CommandeRencontrerPlot * CommandeRencontrerPlot::_instance = new CommandeRencontrerPlot();
+CommandeRencontrerPlot * CommandeRencontrerPlot::_instance = new CommandeRencontrerPlot(0);
 
 Commande * CommandeRencontrerPlot::constructeurVirtuel(LecteurCommande * lect){
-	//récupération d'argument
-	return new CommandeRencontrerPlot(); 
+	int hauteur = lect->getInt();
+	return new CommandeRencontrerPlot(hauteur); 
 }
 
 void CommandeRencontrerPlot::execute() {

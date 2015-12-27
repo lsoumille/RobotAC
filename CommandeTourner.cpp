@@ -7,11 +7,11 @@
 #include "CommandeTourner.h"
 #include "CommandeRobot.h"
 
-CommandeTourner * CommandeTourner::_instance = new CommandeTourner();
+CommandeTourner * CommandeTourner::_instance = new CommandeTourner("N");
 
 Commande * CommandeTourner::constructeurVirtuel(LecteurCommande * lect){
-	//récupération d'argument
-	return new CommandeTourner();
+	string dir = lect->getStr();
+	return new CommandeTourner(dir);
 }
 
 void CommandeTourner::execute() {

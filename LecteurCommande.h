@@ -27,7 +27,8 @@ private:
  		LecteurCommande();
  		void read();
  		Position getPosition(){return _pos;};
- 		int getInteger(){return _paramInt;};
+ 		int getInt();
+ 		string getStr();
 };
 
 #endif
