@@ -17,7 +17,7 @@ private:
 	Plot _plot;
 
 protected:
-	CommandeRencontrerPlot(int haut) : CommandeRobot("RencontrerPlot"), _plot(haut){};
+	CommandeRencontrerPlot(int haut) : CommandeRobot("RENCONTRERPLOT"), _plot(haut){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

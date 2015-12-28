@@ -18,7 +18,7 @@ private:
 	static CommandePoser * _instance;
 
 protected:
-	CommandePoser() : CommandeRobot("Poser"){};
+	CommandePoser() : CommandeRobot("POSER"){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

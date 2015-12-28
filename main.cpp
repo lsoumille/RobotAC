@@ -3,12 +3,14 @@
 #include "EtatRobotFiger.h"
 #include "EtatRobotEnRoute.h"
 #include "AfficheurPrincipal.h"
+#include "LecteurCommande.h"
 
 #include <iostream>
 
 using namespace std;
 
 int main(){
+	/*
 	//création du robot
 	Robot rob;
 	Plot p(10);
@@ -56,12 +58,12 @@ int main(){
 	rob.detacher(affi1);
 	//Ne doit pas s'afficher
 	rob.tourner("S");
+	*/
 
-
-	/**CODE POUR LECTEUR 
-	LecteurCommand Hannibal= new LecteurCommand();
-	Hannibal.read();
-	**/
+	//CODE POUR LECTEUR 
+	LecteurCommande * Hannibal= new LecteurCommande();
+	Hannibal->read();
+	
 
 	return 0;
 }

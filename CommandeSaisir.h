@@ -16,7 +16,7 @@ private:
 	Objet _obj;
 
 protected:
-	CommandeSaisir(int poids) : CommandeRobot("Saisir"), _obj(poids){};
+	CommandeSaisir(int poids) : CommandeRobot("SAISIR"), _obj(poids){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

@@ -13,7 +13,7 @@ date : Nov 2015
 class CommandeRobot: public Commande
 {
 protected:
-	Robot* _Robot;
+	static Robot* _Robot;
 	CommandeRobot(string s):Commande(s){};
 };
 

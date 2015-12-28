@@ -16,7 +16,7 @@ private:
 	string _direction;
 
 protected:
-	CommandeTourner(string direction) : CommandeRobot("Tourner"), _direction(direction){};
+	CommandeTourner(string direction) : CommandeRobot("TOURNER"), _direction(direction){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

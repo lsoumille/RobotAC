@@ -15,7 +15,7 @@ private:
 	static CommandePeser * _instance;
 
 protected:
-	CommandePeser() : CommandeRobot("Peser"){};
+	CommandePeser() : CommandeRobot("PESER"){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

@@ -15,7 +15,7 @@ private:
 	static CommandeRepartir * _instance;
 
 protected:
-	CommandeRepartir() : CommandeRobot("Repartir"){};
+	CommandeRepartir() : CommandeRobot("REPARTIR"){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

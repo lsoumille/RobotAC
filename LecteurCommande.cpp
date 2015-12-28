@@ -6,6 +6,8 @@
 
 #include "LecteurCommande.h"
 #include "Position.h"
+#include <algorithm>
+
  using namespace std;
 
 
@@ -47,9 +49,14 @@ string LecteurCommande::getStr(){
 }
 
 void LecteurCommande::read(){
-
-	string _commande;
-	cin >> _commande;
+	cout << "Début de la simulation (Ctrl^C pour quitter)" << endl;
+	string nomCommande;
+	while(cin >> nomCommande){
+		transform(nomCommande.begin(), nomCommande.end(),nomCommande.begin(), ::toupper);
+		Commande * cmd = Commande::nouvelleCommande(nomCommande);
+		cmd->execute();
+	}
+	/*cin >> _commande;
 	if(_commande=="AVANCER"){
 		int _x,_y;
 		cin>>_x;
@@ -66,7 +73,7 @@ void LecteurCommande::read(){
 		cin>>_paramInt;
 	}
 
-	Commande::nouvelleCommande(_commande);
+	Commande::nouvelleCommande(_commande);*/
 }
 
 

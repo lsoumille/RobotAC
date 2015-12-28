@@ -15,7 +15,7 @@ private:
 	static CommandeFiger * _instance;
 
 protected:
-	CommandeFiger():CommandeRobot("Figer"){};
+	CommandeFiger():CommandeRobot("FIGER"){};
 	
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

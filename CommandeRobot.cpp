@@ -5,3 +5,5 @@
 */
 
 #include "CommandeRobot.h"
+
+Robot * CommandeRobot::_Robot = new Robot();
