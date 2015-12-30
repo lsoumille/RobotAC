@@ -8,8 +8,9 @@
 
 LecteurCommande * Commande::_LecteurCommande = new LecteurCommande();
 
-Commande::Commande(string nom){
+Commande::Commande(string nom, bool isReversible){
 	commandesInscrites()[nom] = this;
+	_reversible = isReversible;
 }
 
 map<string, Commande*>& Commande::commandesInscrites(){

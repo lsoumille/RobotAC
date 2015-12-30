@@ -15,7 +15,7 @@ private:
 	static CommandeEvaluerPlot * _instance;
 
 protected:
-	CommandeEvaluerPlot() : CommandeRobot("EVALUERPLOT"){};
+	CommandeEvaluerPlot() : CommandeRobot("EVALUERPLOT", false){};
 
 public:
 	Commande * constructeurVirtuel(LecteurCommande *);

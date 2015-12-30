@@ -19,9 +19,10 @@ class Commande
 {
 private:
 	static LecteurCommande* _LecteurCommande;
+	bool _reversible;
 
 protected:
-	Commande(string);
+	Commande(string, bool = true);
 
 public:
 	virtual void execute() = 0;

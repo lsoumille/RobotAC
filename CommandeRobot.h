@@ -14,7 +14,7 @@ class CommandeRobot: public Commande
 {
 protected:
 	static Robot* _Robot;
-	CommandeRobot(string s):Commande(s){};
+	CommandeRobot(string s, bool reversible = true):Commande(s, reversible){};
 };
 
 #endif
