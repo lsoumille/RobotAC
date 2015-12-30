@@ -27,7 +27,7 @@ void Robot::saisir(Objet O){
 		_ordre = "saisir";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 
@@ -42,7 +42,7 @@ void Robot::avancer(int x, int y){
 		_ordre = "avancer";
 		notifier(); 
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 
@@ -60,7 +60,7 @@ void Robot::tourner(string direction){
 		_ordre = "tourner";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 
@@ -74,7 +74,7 @@ void Robot::poser(){
 		_ordre = "poser";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	} 
 }
 
@@ -89,7 +89,7 @@ int Robot::peser(){
 		notifier();
 		return _objetSaisi.getPoids();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 	return 0; 
 }
@@ -105,7 +105,7 @@ int Robot::evaluerPlot(){
 		notifier();
 		return _plot.getHauteur();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 	return 0;
 }
@@ -119,7 +119,7 @@ void Robot::figer(){
 		_ordre = "figer";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 
@@ -133,7 +133,7 @@ void Robot::rencontrerPlot(Plot p){
 		_ordre = "rencontrerPlot";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 
@@ -146,7 +146,7 @@ void Robot::repartir(){
 		_ordre = "repartir";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {
-		cerr << "Fonction indisponible" << endl;
+		throw EtatRobot::UnavailableFunction();
 	}
 }
 

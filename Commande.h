@@ -10,6 +10,7 @@ date : Nov 2015
 
 #include "LecteurCommande.h"
 #include <map>
+#include <stack>
 
 using namespace std;
 
@@ -18,10 +19,11 @@ class LecteurCommande;
 class Commande
 {
 private:
-	static LecteurCommande* _LecteurCommande;
+	static LecteurCommande * _LecteurCommande; 
 	bool _reversible;
 
 protected:
+	static stack<Commande *> * _pileCommande;
 	Commande(string, bool = true);
 
 public:

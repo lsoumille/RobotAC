@@ -7,6 +7,7 @@
 #include "Commande.h"
 
 LecteurCommande * Commande::_LecteurCommande = new LecteurCommande();
+stack<Commande *> * Commande::_pileCommande = new stack<Commande *>;
 
 Commande::Commande(string nom, bool isReversible){
 	commandesInscrites()[nom] = this;

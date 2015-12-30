@@ -14,6 +14,11 @@ Commande * CommandeRencontrerPlot::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeRencontrerPlot::execute() {
-	_Robot->rencontrerPlot(_plot);
+	try {
+		_Robot->rencontrerPlot(_plot);	
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
+	
 }
 

@@ -13,6 +13,10 @@ Commande * CommandeEvaluerPlot::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeEvaluerPlot::execute() {
-	_Robot->evaluerPlot();
+	try {
+		_Robot->evaluerPlot();
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
 }
 

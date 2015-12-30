@@ -13,6 +13,10 @@ Commande * CommandePeser::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandePeser::execute() {
-	_Robot->peser();
+	try {
+		_Robot->peser();
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
 }
 

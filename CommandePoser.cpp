@@ -13,6 +13,14 @@ Commande * CommandePoser::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandePoser::execute() {
-	_Robot->poser();
+	try {
+		_Robot->poser();
+		Commande::_pileCommande->push(this);	
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
+	
 }
+
+
 

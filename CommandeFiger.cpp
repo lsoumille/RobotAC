@@ -13,6 +13,12 @@ Commande * CommandeFiger::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeFiger::execute() {
-	_Robot->figer();
+	try {
+		_Robot->figer();
+		Commande::_pileCommande->push(this);	
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
+	
 }
 

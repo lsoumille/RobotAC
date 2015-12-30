@@ -15,6 +15,7 @@ class CommandeAvancer: public CommandeRobot
 private:
 	static CommandeAvancer * _instance;
 	Position _pos;
+	Position _oldPos;
 
 protected:
 	CommandeAvancer(int x, int y) : CommandeRobot("AVANCER"), _pos(x,y){};

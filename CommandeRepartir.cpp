@@ -14,6 +14,12 @@ Commande * CommandeRepartir::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeRepartir::execute() {
-	_Robot->repartir();
+	try {
+		_Robot->repartir();
+		Commande::_pileCommande->push(this);	
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
+	
 }
 

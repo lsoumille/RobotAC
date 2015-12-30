@@ -15,6 +15,12 @@ Commande * CommandeTourner::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeTourner::execute() {
-	_Robot->tourner(_direction);
+	try {
+		_Robot->tourner(_direction);
+		Commande::_pileCommande->push(this);	
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande indisponible" << endl;
+	}
+	
 }
 

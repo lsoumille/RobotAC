@@ -15,6 +15,11 @@ Commande * CommandeSaisir::constructeurVirtuel(LecteurCommande * lect){
 }
 
 void CommandeSaisir::execute() {
-	_Robot->saisir(_obj);
+	try{
+		_Robot->saisir(_obj);
+		Commande::_pileCommande->push(this);
+	} catch(EtatRobot::UnavailableFunction) {
+		cerr << "Commande interdite" << endl;
+	}
 }
 
