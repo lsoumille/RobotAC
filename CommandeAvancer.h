@@ -13,16 +13,14 @@ date : Nov 2015
 class CommandeAvancer: public CommandeRobot
 {
 private:
-	static CommandeAvancer * _instance;
 	Position _pos;
 	Position _oldPos;
 
-protected:
-	CommandeAvancer(int x, int y) : CommandeRobot("AVANCER"), _pos(x,y){};
-
 public:
+	CommandeAvancer(Robot * robot, int x = 0, int y = 0) : CommandeRobot("AVANCER", robot), _pos(x,y){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
+	void desexecute();
 };
 
 #endif

@@ -4,13 +4,22 @@
 #include "EtatRobotEnRoute.h"
 #include "AfficheurPrincipal.h"
 #include "LecteurCommande.h"
+#include "CommandeAvancer.h"
+#include "CommandeEvaluerPlot.h"
+#include "CommandeFiger.h"
+#include "CommandePeser.h"
+#include "CommandePoser.h"
+#include "CommandeRencontrerPlot.h"
+#include "CommandeRepartir.h"
+#include "CommandeSaisir.h"
+#include "CommandeTourner.h"
 
 #include <iostream>
 
 using namespace std;
 
 int main(){
-	/*
+
 	//création du robot
 	Robot rob;
 	Plot p(10);
@@ -19,7 +28,7 @@ int main(){
 	//Mise en place de l'afficheur
 	Afficheur* affi1 = new AfficheurPrincipal();
 	rob.attacher(affi1);
-
+	/*
 	//Test AVide sans changement d'Etat
 	rob.avancer(1,1);
 	rob.tourner("S");
@@ -59,6 +68,15 @@ int main(){
 	//Ne doit pas s'afficher
 	rob.tourner("S");
 	*/
+	CommandeAvancer cmdAvancer(&rob);
+	CommandeEvaluerPlot cmdEvaPlot(&rob);
+	CommandeFiger cmdFiger(&rob);
+	CommandePeser cmdPeser(&rob);
+	CommandePoser cmdPoser(&rob);
+	CommandeRencontrerPlot cmdRP(&rob);
+	CommandeRepartir cmdRepartir(&rob);
+	CommandeSaisir cmdSaisir(&rob);
+	CommandeTourner cmdTourner(&rob);
 
 	//CODE POUR LECTEUR 
 	LecteurCommande * Hannibal= new LecteurCommande();

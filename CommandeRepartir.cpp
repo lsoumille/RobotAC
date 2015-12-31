@@ -7,19 +7,22 @@
 #include "CommandeRepartir.h"
 #include "CommandeRobot.h"
 
-CommandeRepartir * CommandeRepartir::_instance = new CommandeRepartir();
-
 Commande * CommandeRepartir::constructeurVirtuel(LecteurCommande * lect){
-	return new CommandeRepartir(); 
+	return new CommandeRepartir(_Robot); 
 }
 
-void CommandeRepartir::execute() {
+void CommandeRepartir::execute(){
 	try {
 		_Robot->repartir();
 		Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
-	}
-	
+	}	
+}
+
+
+void CommandeRepartir::desexecute(){
+	_Robot->figer();
+	Commande::_pileCommande->pop();
 }
 

@@ -12,15 +12,13 @@ date : Nov 2015
 class CommandeSaisir: public CommandeRobot
 {
 private:
-	static CommandeSaisir * _instance;
-	Objet _obj;
-
-protected:
-	CommandeSaisir(int poids) : CommandeRobot("SAISIR"), _obj(poids){};
+	Objet _obj;	
 
 public:
+	CommandeSaisir(Robot * robot, int poids = 0) : CommandeRobot("SAISIR", robot), _obj(poids){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
+	void desexecute();
 };
 
 #endif

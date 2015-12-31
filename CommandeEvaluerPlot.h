@@ -11,13 +11,9 @@ date : Nov 2015
 
 class CommandeEvaluerPlot: public CommandeRobot
 {
-private:
-	static CommandeEvaluerPlot * _instance;
-
-protected:
-	CommandeEvaluerPlot() : CommandeRobot("EVALUERPLOT", false){};
 
 public:
+	CommandeEvaluerPlot(Robot * robot) : CommandeRobot("EVALUERPLOT", robot, false){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
 };

@@ -2,7 +2,7 @@ CC = g++
 
 option = -g -W -Wall -std=c++11 
 
-OBJ_FICHIER = main.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o LecteurCommande.o Commande.o CommandeRobot.o CommandeRepartir.o CommandeFiger.o CommandeSaisir.o CommandePeser.o CommandeRencontrerPlot.o CommandePoser.o CommandeEvaluerPlot.o CommandeTourner.o CommandeAvancer.o
+OBJ_FICHIER = main.o Robot.o EtatRobot.o EtatRobotFiger.o EtatRobotEnRoute.o Objet.o Position.o Plot.o Afficheur.o AfficheurPrincipal.o EtatRobotEnCharge.o EtatRobotChargeFacePlot.o EtatRobotAVideFacePlot.o EtatRobotAVide.o LecteurCommande.o Commande.o CommandeRobot.o CommandeRepartir.o CommandeFiger.o CommandeSaisir.o CommandePeser.o CommandeRencontrerPlot.o CommandePoser.o CommandeEvaluerPlot.o CommandeTourner.o CommandeAvancer.o CommandeAnnuler.o
 
 EXE = executionRobot
 
@@ -114,5 +114,10 @@ CommandeTourner.o : CommandeTourner.h CommandeTourner.cpp
 #Classe CommandeAvancer
 CommandeAvancer.o : CommandeAvancer.h CommandeAvancer.cpp
 	$(CC) $(option) -c CommandeAvancer.cpp -o CommandeAvancer.o
+
+
+#Classe CommandeAnnuler
+CommandeAnnuler.o : CommandeAnnuler.h CommandeAnnuler.cpp
+	$(CC) $(option) -c CommandeAnnuler.cpp -o CommandeAnnuler.o
 clean: 
 	rm -vf *.o executionRobot

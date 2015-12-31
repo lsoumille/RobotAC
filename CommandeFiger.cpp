@@ -6,19 +6,21 @@
 
 #include "CommandeFiger.h"
 
-CommandeFiger * CommandeFiger::_instance = new CommandeFiger();
-
 Commande * CommandeFiger::constructeurVirtuel(LecteurCommande * lect){
-	return new CommandeFiger();
+	return new CommandeFiger(_Robot);
 }
 
-void CommandeFiger::execute() {
+void CommandeFiger::execute(){
 	try {
 		_Robot->figer();
 		Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}
-	
+}
+
+void CommandeFiger::desexecute(){
+	_Robot->repartir();
+	Commande::_pileCommande->pop();	
 }
 

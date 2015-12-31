@@ -8,72 +8,54 @@
 #include "Position.h"
 #include <algorithm>
 
- using namespace std;
-
-
- LecteurCommande::LecteurCommande(){
- 	_pos= Position();
- }
-
-//ExecuteCommandeByString()
-/*
-prompt 
-nouvelleCommande(getString)
-execute
-*/
-//getString
-/*
-return cin >> str
-*/
-
-//getInt
-/*
-return cin >> int
-*/
-
-//getCommande
-/*
-return 
-*/
+using namespace std;
 
 int LecteurCommande::getInt(){
 	int value;
 	cin >> value;
+	while(value <= 0){
+		cout << "La valeur doit etre positive, Retapez une valeur :" << endl << "valeur = ";
+		cin >> value;
+		cin.clear();
+		cin.ignore(10000, ' ');
+	}
 	return value;
 }
 
-string LecteurCommande::getStr(){
+string LecteurCommande::getDirection(){
 	string value;
 	cin >> value;
+	transform(value.begin(), value.end(), value.begin(), ::toupper);
+	while(value != "N" && value != "S" && value != "E" && value != "O"){
+		cout << "Les directions sont N, S, E ou O, Retapez la direction :" << endl << "direction = ";
+		cin >> value;
+		transform(value.begin(), value.end(), value.begin(), ::toupper);
+	}
 	return value;
 }
 
+bool isCommandInParam(vector<string> list, string nom){
+	return (find(list.begin(), list.end(), nom) != list.end());
+}
+
+
 void LecteurCommande::read(){
-	cout << "Début de la simulation (Ctrl^C pour quitter)" << endl;
+	vector<string> allCommands;
+	for(auto it = Commande::commandesInscrites().begin(); it != Commande::commandesInscrites().end(); ++it){
+        allCommands.push_back(it->first);
+    }
+	cout << "Début de la simulation (Ctrl^C pour quitter)" << endl << "> ";
 	string nomCommande;
 	while(cin >> nomCommande){
 		transform(nomCommande.begin(), nomCommande.end(),nomCommande.begin(), ::toupper);
-		Commande * cmd = Commande::nouvelleCommande(nomCommande);
-		cmd->execute();
+		if(isCommandInParam(allCommands, nomCommande)){
+			Commande * cmd = Commande::nouvelleCommande(nomCommande, this);
+			cmd->execute();
+		} else {
+			cerr << "Commande inconnue. Tapez une autre commande :" << endl;
+		}
+		cout << "> ";
 	}
-	/*cin >> _commande;
-	if(_commande=="AVANCER"){
-		int _x,_y;
-		cin>>_x;
-		cin>>_y;
-		_pos.setx(_x);
-		_pos.sety(_y);
-
-	}
-	if(_commande=="SAISIR"){
-		cin>>_paramInt;
-
-	}
-	if(_commande=="RENCONTRER"){
-		cin>>_paramInt;
-	}
-
-	Commande::nouvelleCommande(_commande);*/
 }
 
 

@@ -6,7 +6,7 @@
 
 #include "Commande.h"
 
-LecteurCommande * Commande::_LecteurCommande = new LecteurCommande();
+//LecteurCommande * Commande::_LecteurCommande = new LecteurCommande();
 stack<Commande *> * Commande::_pileCommande = new stack<Commande *>;
 
 Commande::Commande(string nom, bool isReversible){
@@ -19,6 +19,10 @@ map<string, Commande*>& Commande::commandesInscrites(){
 	return *docInscrits;
 }
 
-Commande * Commande::nouvelleCommande(string nom){
-	return commandesInscrites()[nom]->constructeurVirtuel(_LecteurCommande);
+Commande * Commande::nouvelleCommande(string nom, LecteurCommande * lect){
+	return commandesInscrites()[nom]->constructeurVirtuel(lect);
+}
+
+void Commande::desexecute(){
+	throw Commande::UnavailableReverse();
 }

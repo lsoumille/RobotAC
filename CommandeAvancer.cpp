@@ -6,13 +6,11 @@
 
 #include "CommandeAvancer.h"
 
-CommandeAvancer * CommandeAvancer::_instance = new CommandeAvancer(0,0);
-
 Commande * CommandeAvancer::constructeurVirtuel(LecteurCommande * lect){
 	int x = lect->getInt();
 	int y = lect->getInt();
 	_oldPos = _Robot-> getPosition();
-	return new CommandeAvancer(x,y); 
+	return new CommandeAvancer(_Robot,x,y); 
 }
 
 void CommandeAvancer::execute() {
@@ -22,6 +20,11 @@ void CommandeAvancer::execute() {
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}
+}
+
+void CommandeAvancer::desexecute() {
+	_Robot->avancer(_oldPos.getx(), _oldPos.gety());
+	Commande::_pileCommande->pop();	
 }
 
 

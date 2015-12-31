@@ -19,7 +19,7 @@ class LecteurCommande;
 class Commande
 {
 private:
-	static LecteurCommande * _LecteurCommande; 
+	//static LecteurCommande * _LecteurCommande; 
 	bool _reversible;
 
 protected:
@@ -28,9 +28,12 @@ protected:
 
 public:
 	virtual void execute() = 0;
+	virtual void desexecute();
 	static map<string,Commande*>& commandesInscrites();
-	static Commande * nouvelleCommande(string);
-	virtual Commande * constructeurVirtuel(LecteurCommande *) = 0; 
+	static Commande * nouvelleCommande(string, LecteurCommande *);
+	virtual Commande * constructeurVirtuel(LecteurCommande *) = 0;
+
+	class UnavailableReverse{}; 
 };
 
 #endif

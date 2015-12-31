@@ -19,16 +19,11 @@ class Commande;
 
 class LecteurCommande
 {
-private:
-	int _paramInt;
-	Position _pos;
 
- public:
- 		LecteurCommande();
- 		void read();
- 		Position getPosition(){return _pos;};
- 		int getInt();
- 		string getStr();
+public:
+ 	void read();
+ 	int getInt();
+ 	string getDirection();
 };
 
 #endif

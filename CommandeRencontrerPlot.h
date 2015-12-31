@@ -13,13 +13,10 @@ date : Nov 2015
 class CommandeRencontrerPlot: public CommandeRobot
 {
 private:
-	static CommandeRencontrerPlot * _instance;
 	Plot _plot;
 
-protected:
-	CommandeRencontrerPlot(int haut) : CommandeRobot("RENCONTRERPLOT", false), _plot(haut){};
-
 public:
+	CommandeRencontrerPlot(Robot * robot, int haut = 0) : CommandeRobot("RENCONTRERPLOT", robot, false), _plot(haut){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
 };

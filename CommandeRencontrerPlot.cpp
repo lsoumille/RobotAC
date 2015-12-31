@@ -6,16 +6,16 @@
 
 #include "CommandeRencontrerPlot.h"
 
-CommandeRencontrerPlot * CommandeRencontrerPlot::_instance = new CommandeRencontrerPlot(0);
-
 Commande * CommandeRencontrerPlot::constructeurVirtuel(LecteurCommande * lect){
 	int hauteur = lect->getInt();
-	return new CommandeRencontrerPlot(hauteur); 
+	cout << "virtuel rp" << endl;
+	return new CommandeRencontrerPlot(_Robot, hauteur); 
 }
 
 void CommandeRencontrerPlot::execute() {
 	try {
 		_Robot->rencontrerPlot(_plot);	
+		//Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}

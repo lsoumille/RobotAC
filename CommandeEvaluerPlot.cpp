@@ -6,15 +6,14 @@
 
 #include "CommandeEvaluerPlot.h"
 
-CommandeEvaluerPlot * CommandeEvaluerPlot::_instance = new CommandeEvaluerPlot();
-
 Commande * CommandeEvaluerPlot::constructeurVirtuel(LecteurCommande * lect){
-	return new CommandeEvaluerPlot();
+	return new CommandeEvaluerPlot(_Robot);
 }
 
 void CommandeEvaluerPlot::execute() {
 	try {
 		_Robot->evaluerPlot();
+		//Commande::_pileCommande->push(this);
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}

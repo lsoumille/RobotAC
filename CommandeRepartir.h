@@ -11,15 +11,12 @@ date : Nov 2015
 
 class CommandeRepartir: public CommandeRobot
 {
-private:
-	static CommandeRepartir * _instance;
-
-protected:
-	CommandeRepartir() : CommandeRobot("REPARTIR"){};
 
 public:
+	CommandeRepartir(Robot * robot ) : CommandeRobot("REPARTIR", robot){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
+	void desexecute();
 };
 
 #endif

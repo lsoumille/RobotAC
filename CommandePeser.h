@@ -11,13 +11,9 @@ date : Nov 2015
 
 class CommandePeser: public CommandeRobot
 {
-private:
-	static CommandePeser * _instance;
-
-protected:
-	CommandePeser() : CommandeRobot("PESER", false){};
 
 public:
+	CommandePeser(Robot * robot) : CommandeRobot("PESER", robot, false){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
 };

@@ -11,15 +11,12 @@ date : Nov 2015
 
 class CommandeFiger: public CommandeRobot
 {
-private:
-	static CommandeFiger * _instance;
-
-protected:
-	CommandeFiger():CommandeRobot("FIGER"){};
 	
 public:
+	CommandeFiger(Robot * robot):CommandeRobot("FIGER", robot){};
 	Commande * constructeurVirtuel(LecteurCommande *);
 	void execute();
+	void desexecute();
 };
 
 #endif

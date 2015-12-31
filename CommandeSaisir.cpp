@@ -6,12 +6,9 @@
 
 #include "CommandeSaisir.h"
 
-
-CommandeSaisir * CommandeSaisir::_instance = new CommandeSaisir(0);
-
 Commande * CommandeSaisir::constructeurVirtuel(LecteurCommande * lect){
 	int poids = lect->getInt();
-	return new CommandeSaisir(poids); 
+	return new CommandeSaisir(_Robot, poids); 
 }
 
 void CommandeSaisir::execute() {
@@ -21,5 +18,10 @@ void CommandeSaisir::execute() {
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}
+}
+
+void CommandeSaisir::desexecute() {
+	_Robot->poser();
+	Commande::_pileCommande->pop();
 }
 

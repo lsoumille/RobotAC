@@ -13,8 +13,8 @@ date : Nov 2015
 class CommandeRobot: public Commande
 {
 protected:
-	static Robot* _Robot;
-	CommandeRobot(string s, bool reversible = true):Commande(s, reversible){};
+	Robot * _Robot;
+	CommandeRobot(string s,  Robot * robot, bool reversible = true):Commande(s, reversible), _Robot(robot){};
 };
 
 #endif

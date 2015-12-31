@@ -6,15 +6,14 @@
 
 #include "CommandePeser.h"
 
-CommandePeser * CommandePeser::_instance = new CommandePeser();
-
 Commande * CommandePeser::constructeurVirtuel(LecteurCommande * lect){
-	return new CommandePeser();
+	return new CommandePeser(_Robot);
 }
 
 void CommandePeser::execute() {
 	try {
 		_Robot->peser();
+		//Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}
