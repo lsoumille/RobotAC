@@ -20,7 +20,12 @@ void CommandeFiger::execute(){
 }
 
 void CommandeFiger::desexecute(){
-	_Robot->repartir();
-	Commande::_pileCommande->pop();	
+	try {
+		_Robot->repartir();
+		Commande::_pileCommande->pop();	
+	} catch(EtatRobot::UnavailableFunction) {
+		throw Commande::UnavailableReverse();
+	}
+		
 }
 

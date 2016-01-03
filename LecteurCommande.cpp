@@ -10,16 +10,27 @@
 
 using namespace std;
 
-int LecteurCommande::getInt(){
-	int value;
-	cin >> value;
-	while(value <= 0){
-		cout << "La valeur doit etre positive, Retapez une valeur :" << endl << "valeur = ";
-		cin >> value;
-		cin.clear();
-		cin.ignore(10000, ' ');
+static vector<string> allCommands;
+
+bool isNumber(string s){
+	for(int i = 0 ; i < s.size() ; ++i){
+		if(! isdigit(s[i]))
+			return false;
 	}
-	return value;
+	return true;
+}
+
+int LecteurCommande::getInt(){
+	string value;
+	cin >> value; 
+	while(! isNumber(value) || value.size() == 0){
+		cout << "La valeur doit etre positive, Retapez une valeur :" << endl << "valeur = ";
+		cin.ignore(10000, '\n');
+		cin >> value;
+		cin.ignore(10000, '\n');
+	}
+	cout << "end" << endl;
+	return stoi(value);
 }
 
 string LecteurCommande::getDirection(){
@@ -38,10 +49,8 @@ bool isCommandInParam(vector<string> list, string nom){
 	return (find(list.begin(), list.end(), nom) != list.end());
 }
 
-
 void LecteurCommande::read(){
-	vector<string> allCommands;
-	for(auto it = Commande::commandesInscrites().begin(); it != Commande::commandesInscrites().end(); ++it){
+	for(auto it = Commande::commandesDisponibles().begin(); it != Commande::commandesDisponibles().end(); ++it){
         allCommands.push_back(it->first);
     }
 	cout << "Début de la simulation (Ctrl^C pour quitter)" << endl << "> ";
@@ -52,7 +61,7 @@ void LecteurCommande::read(){
 			Commande * cmd = Commande::nouvelleCommande(nomCommande, this);
 			cmd->execute();
 		} else {
-			cerr << "Commande inconnue. Tapez une autre commande :" << endl;
+			cerr << "Erreur Commande. Tapez de nouveau la commande :" << endl;
 		}
 		cout << "> ";
 	}

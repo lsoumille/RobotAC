@@ -12,8 +12,8 @@ using namespace std;
 //constructeur
 Robot::Robot(): _position(0,0),
 				_direction("N"),
-				_objetSaisi(0),
-				_plot(0) {
+				_objetSaisi(),
+				_plot() {
 	_etat = EtatRobot::getEtatInitial();
 }
 
@@ -55,7 +55,7 @@ void Robot::tourner(string direction){
 		if(direction != _direction){
 			_etat = _etat->tourner();
 			_direction = direction;
-			_plot = Plot(0);	
+			_plot = Plot();	
 		}
 		_ordre = "tourner";
 		notifier();
@@ -70,7 +70,7 @@ Le robot pose l'objet qu'il détient
 void Robot::poser(){
 	try {
 		_etat = _etat->poser();
-		_objetSaisi = Objet(0);
+		_objetSaisi = Objet();
 		_ordre = "poser";
 		notifier();
 	} catch(EtatRobot::UnavailableFunction) {

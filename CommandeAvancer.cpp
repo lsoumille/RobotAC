@@ -23,8 +23,13 @@ void CommandeAvancer::execute() {
 }
 
 void CommandeAvancer::desexecute() {
-	_Robot->avancer(_oldPos.getx(), _oldPos.gety());
-	Commande::_pileCommande->pop();	
+	try {
+		_Robot->avancer(_oldPos.getx(), _oldPos.gety());
+		Commande::_pileCommande->pop();	
+	} catch(EtatRobot::UnavailableFunction) {
+		throw Commande::UnavailableReverse();
+	}
+		
 }
 
 

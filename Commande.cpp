@@ -6,21 +6,20 @@
 
 #include "Commande.h"
 
-//LecteurCommande * Commande::_LecteurCommande = new LecteurCommande();
 stack<Commande *> * Commande::_pileCommande = new stack<Commande *>;
 
 Commande::Commande(string nom, bool isReversible){
-	commandesInscrites()[nom] = this;
+	commandesDisponibles()[nom] = this;
 	_reversible = isReversible;
 }
 
-map<string, Commande*>& Commande::commandesInscrites(){
-	static map<string, Commande*>* docInscrits = new map<string, Commande*>();
-	return *docInscrits;
+map<string, Commande*>& Commande::commandesDisponibles(){
+	static map<string, Commande*>* cmdDispos = new map<string, Commande*>();
+	return *cmdDispos;
 }
 
 Commande * Commande::nouvelleCommande(string nom, LecteurCommande * lect){
-	return commandesInscrites()[nom]->constructeurVirtuel(lect);
+	return commandesDisponibles()[nom]->constructeurVirtuel(lect);
 }
 
 void Commande::desexecute(){

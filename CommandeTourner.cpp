@@ -9,12 +9,12 @@
 
 Commande * CommandeTourner::constructeurVirtuel(LecteurCommande * lect){
 	string dir = lect->getDirection();
+	_oldDirection = _Robot->getDirection();
 	return new CommandeTourner(_Robot, dir);
 }
 
 void CommandeTourner::execute(){
 	try {
-		_oldDirection = _Robot->getDirection();
 		_Robot->tourner(_direction);
 		Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
@@ -23,7 +23,11 @@ void CommandeTourner::execute(){
 }
 
 void CommandeTourner::desexecute(){
-	_Robot->tourner(_oldDirection);
-	Commande::_pileCommande->pop();	
+	try {
+		_Robot->tourner(_oldDirection);
+		Commande::_pileCommande->pop();		
+	} catch(EtatRobot::UnavailableFunction) {
+		throw UnavailableReverse();
+	}
 }
 

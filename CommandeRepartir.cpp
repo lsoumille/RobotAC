@@ -5,7 +5,6 @@
 */
 
 #include "CommandeRepartir.h"
-#include "CommandeRobot.h"
 
 Commande * CommandeRepartir::constructeurVirtuel(LecteurCommande * lect){
 	return new CommandeRepartir(_Robot); 
@@ -20,9 +19,12 @@ void CommandeRepartir::execute(){
 	}	
 }
 
-
 void CommandeRepartir::desexecute(){
-	_Robot->figer();
-	Commande::_pileCommande->pop();
+	try {
+		_Robot->figer();
+		Commande::_pileCommande->pop();	
+	} catch(EtatRobot::UnavailableFunction) {
+		throw UnavailableReverse();
+	}
 }
 

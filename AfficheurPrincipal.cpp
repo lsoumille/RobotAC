@@ -18,8 +18,8 @@ void AfficheurPrincipal::afficher(Robot * r){
 		 << "Position : x = " << r->getPosition().getx()
 		 << " y = " << r->getPosition().gety() << endl
 		 << "Direction : " << r->getDirection() << endl
-		 << "Objet (0 equivalent a vide) : " << r->getObjet().getPoids() << endl
-		 << "Plot (0 n'est pas face à un plot) : " << r->getPlot().getHauteur() << endl;
+		 << "Objet (-1 equivalent a vide) : " << r->getObjet().getPoids() << endl
+		 << "Plot (-1 n'est pas face à un plot) : " << r->getPlot().getHauteur() << endl;
 	if(r->getOrdre() == "figer")
 		cout << "Le robot est figé" << endl;
 	else 

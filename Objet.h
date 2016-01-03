@@ -13,7 +13,7 @@ class Objet {
 		int _poids;
 
 	public:
-		Objet(int p): _poids(p){};
+		Objet(int p = -1): _poids(p){};
 
 		int getPoids();
 };

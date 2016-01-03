@@ -21,7 +21,12 @@ void CommandeSaisir::execute() {
 }
 
 void CommandeSaisir::desexecute() {
-	_Robot->poser();
-	Commande::_pileCommande->pop();
+	try {
+		_Robot->poser();
+		Commande::_pileCommande->pop();	
+	} catch(EtatRobot::UnavailableFunction) {
+		throw UnavailableReverse();
+	}
+	
 }
 

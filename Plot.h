@@ -13,7 +13,7 @@ class Plot {
 		int _hauteur;
 
 	public:
-		Plot(int i): _hauteur(i){}; 
+		Plot(int i = -1): _hauteur(i){}; 
 
 		int getHauteur();
 };

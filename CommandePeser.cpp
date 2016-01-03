@@ -1,5 +1,5 @@
 /*
-  Implementation des méthodes de EtatRobot.h
+  Implementation des méthodes de CommandePeser.h
   auteurs : Molinengo/Soumille
   date : Nov 2015
 */
@@ -13,7 +13,6 @@ Commande * CommandePeser::constructeurVirtuel(LecteurCommande * lect){
 void CommandePeser::execute() {
 	try {
 		_Robot->peser();
-		//Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
 		cerr << "Commande interdite" << endl;
 	}

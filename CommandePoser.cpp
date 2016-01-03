@@ -7,12 +7,12 @@
 #include "CommandePoser.h"
 
 Commande * CommandePoser::constructeurVirtuel(LecteurCommande * lect){
+	_objInRobot = _Robot->getObjet();
 	return new CommandePoser(_Robot); 
 }
 
 void CommandePoser::execute(){
 	try {
-		_objInRobot = _Robot->getObjet();
 		_Robot->poser();
 		Commande::_pileCommande->push(this);	
 	} catch(EtatRobot::UnavailableFunction) {
@@ -21,8 +21,13 @@ void CommandePoser::execute(){
 }
 
 void CommandePoser::desexecute() {
-	_Robot->saisir(_objInRobot);
-	Commande::_pileCommande->pop();
+	try {
+		_Robot->saisir(_objInRobot);
+		Commande::_pileCommande->pop();	
+	} catch(EtatRobot::UnavailableFunction) {
+		throw Commande::UnavailableReverse();
+	}
+	
 }
 
 
